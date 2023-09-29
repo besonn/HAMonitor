@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.7/css/layui.css">
+</head>
+<body>
+  <form id="layer" class="layui-form">
+    <div class="layui-col-md10" style="padding-top: 1rem">
+        <div class="layui-form-item">
+            <label class="layui-form-label">描述</label>
+            <div class="layui-input-block">
+                <input name="description" type="text" class="layui-input" value={{data.description}}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">命令</label>
+            <div class="layui-input-block">
+                <input name="statement" type="text" class="layui-input" value="{{data.statement}}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-active="submit" >提交</button>
+                <button type="reset" class="layui-btn">重置</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    //JS 
+    layui.use(['element', 'layer', 'util','form','table'], function(){
+      var element = layui.element;
+      var table = layui.table;
+      var layer = layui.layer;
+      var util = layui.util;
+      var $ = layui.$;
+      
+      util.event('lay-active', {
+        submit: function(othis){
+    
+          layer.open({
+            type: 2,
+            content: '/pacemaker/'+id,
+            area: '500px'
+          })
+        }
+        
+      });
+      
+    });
+    </script>
+</body>
+</html>

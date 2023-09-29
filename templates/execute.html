@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.7/css/layui.css">
+</head>
+<body>
+  <div class="layui-panel">
+
+    <div style="padding: 32px;white-space: pre-line;">{{data}}</div>
+  </div>
+<script>
+    //JS 
+    layui.use(['element', 'layer', 'util','form','table'], function(){
+      var element = layui.element;
+      var table = layui.table;
+      var layer = layui.layer;
+      var util = layui.util;
+      var $ = layui.$;
+      
+      util.event('lay-active', {
+        submit: function(othis){
+    
+          layer.open({
+            type: 2,
+            content: '/statement/'+id,
+            // content: $('#exe_layer'),
+            area: '500px'
+          })
+        }
+        
+      });
+      
+    });
+    </script>
+</body>
+</html>

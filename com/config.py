@@ -1,0 +1,7 @@
+# SQLITE数据库配置
+SQLALCHEMY_DATABASE_URI = 'sqlite:///data.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+JSON_AS_ASCII = False
+
+DEBUG = True
